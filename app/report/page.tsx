@@ -16,6 +16,15 @@ const INSIGHT_META: Record<CustomerInsight['type'], { label: string; cls: string
   gap:        { label: 'Market gap',        cls: 'border-l-2 border-l-green-500'  },
 };
 
+interface RoutingMeta {
+  matchedBy: 'model' | 'local';
+  matchedKeyword: string;
+  reason: string;
+  confidence: number;
+}
+
+const STATIC_EXPORT_MODE = process.env.NEXT_PUBLIC_STATIC_EXPORT === 'true';
+
 // ── Section header component ──────────────────────────────────────
 interface SectionHeaderProps {
   num: string;
@@ -83,17 +92,80 @@ function ReportContent() {
   const [phase,   setPhase]   = useState<'loading' | 'report'>('loading');
   const [report,  setReport]  = useState<ReportData | null>(null);
   const [visible, setVisible] = useState(false);
+  const [routing, setRouting] = useState<RoutingMeta | null>(null);
+  const [analysisDone, setAnalysisDone] = useState(false);
+  const [loadingDone, setLoadingDone] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    if (!keyword) { router.push('/'); return; }
-    const result = matchReport(keyword, region, platform);
-    setReport(result);
+    let cancelled = false;
+
+    async function runAnalysis() {
+      if (!keyword) {
+        router.push('/');
+        return;
+      }
+
+      try {
+        setError('');
+        setAnalysisDone(false);
+
+        if (STATIC_EXPORT_MODE) {
+          const localReport = matchReport(keyword, region, platform);
+          if (cancelled) return;
+          setReport(localReport);
+          setRouting({
+            matchedBy: 'local',
+            matchedKeyword: localReport.keyword,
+            reason: 'Static export preview uses bundled mock data.',
+            confidence: 0.82,
+          });
+          setAnalysisDone(true);
+          return;
+        }
+
+        const response = await fetch('/api/analyze', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ keyword, region, platform }),
+          cache: 'no-store',
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data?.error || 'Analysis failed');
+        }
+
+        if (cancelled) return;
+
+        setReport(data.report);
+        setRouting(data.routing ?? null);
+        setAnalysisDone(true);
+      } catch (err) {
+        if (cancelled) return;
+        setError(err instanceof Error ? err.message : 'Analysis failed');
+        setAnalysisDone(true);
+      }
+    }
+
+    runAnalysis();
+
+    return () => {
+      cancelled = true;
+    };
   }, [keyword, region, platform, router]);
 
   const onLoadingComplete = useCallback(() => {
+    setLoadingDone(true);
+  }, []);
+
+  useEffect(() => {
+    if (!analysisDone || !loadingDone || !report) return;
+
     setPhase('report');
     setTimeout(() => setVisible(true), 80);
-  }, []);
+  }, [analysisDone, loadingDone, report]);
 
   return (
     <main className="min-h-screen grid-bg flex flex-col">
@@ -103,6 +175,15 @@ function ReportContent() {
       {phase === 'loading' && (
         <div className="flex-1 flex items-center justify-center px-4 py-16">
           <LoadingSteps onComplete={onLoadingComplete} />
+        </div>
+      )}
+
+      {phase === 'loading' && analysisDone && error && (
+        <div className="px-6 pb-10">
+          <div className="max-w-xl mx-auto panel p-5 border border-red-500/30">
+            <div className="label mb-2">analysis error</div>
+            <p className="text-sm text-[#94a3b8]">{error}</p>
+          </div>
         </div>
       )}
 
@@ -123,6 +204,15 @@ function ReportContent() {
                 <p className="mono text-[#cbd5e1] text-sm mt-2">
                   {report.platform} · {report.region} · market intelligence report
                 </p>
+                {routing && (
+                  <p className="mono text-[#64748b] text-xs mt-3">
+                    routed via {routing.matchedBy === 'model' ? 'ai relay' : 'local fallback'}
+                    {' · '}
+                    matched mock: {routing.matchedKeyword}
+                    {' · '}
+                    confidence {(routing.confidence * 100).toFixed(0)}%
+                  </p>
+                )}
               </div>
               <div className="hidden sm:flex gap-8 text-right flex-shrink-0">
                 {[
@@ -148,7 +238,14 @@ function ReportContent() {
               />
               <div className="panel p-6 flex gap-5 bg-[#0d1321]">
                 <div className="accent-bar" />
-                <p className="text-base text-[#cbd5e1] leading-relaxed">{report.summary}</p>
+                <div className="space-y-3">
+                  <p className="text-base text-[#cbd5e1] leading-relaxed">{report.summary}</p>
+                  {routing && (
+                    <p className="mono text-xs text-[#64748b]">
+                      routing note: {routing.reason}
+                    </p>
+                  )}
+                </div>
               </div>
             </section>
 

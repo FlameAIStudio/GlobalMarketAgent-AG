@@ -23,7 +23,7 @@ export default function InputForm() {
     <form onSubmit={handleSubmit} className="w-full space-y-5">
       {/* Keyword */}
       <div>
-        <label className="label block mb-2.5">Product keyword</label>
+        <label className="label block mb-2.5">Product description</label>
         <div className={`panel flex items-center px-4 py-3.5 gap-3 transition-colors duration-150 ${
           focused ? 'border-[#3b82f6]/60' : ''
         }`}>
@@ -37,7 +37,7 @@ export default function InputForm() {
             onChange={(e) => setKeyword(e.target.value)}
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
-            placeholder="e.g. wireless earbuds"
+            placeholder="e.g. affordable sports earbuds with ANC for Amazon US"
             className="flex-1 bg-transparent text-[#e8edf3] placeholder-[#cbd5e1] text-base outline-none"
             autoComplete="off"
           />
