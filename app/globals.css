@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base:    #080c14;
+  --bg-panel:   #0d1117;
+  --bg-surface: #111827;
+  --bg-hover:   #161f2e;
+  --border:     #1a2435;
+  --border-hi:  #2d3f55;
+  --accent:     #3b82f6;
+  --text-1:     #e8edf3;
+  --text-2:     #8499b0;
+  --text-3:     #3a4e63;
+  --green:      #34d399;
+  --yellow:     #fbbf24;
+}
+
+* { box-sizing: border-box; }
+
+/* ── Base: 16px for readability in presentations ── */
+html { font-size: 16px; }
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-1);
+  font-family: 'Inter', -apple-system, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* ── Panels ─────────────────────────────────────── */
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.panel:hover { border-color: var(--border-hi); transition: border-color 0.15s; }
+
+.panel-sm {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+/* ── Mono font ───────────────────────────────────── */
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+/* ── Section labels — readable size ─────────────── */
+.label {
+  font-size: 0.7rem;         /* 11.2px at 16px base — visible */
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* ── Tags ────────────────────────────────────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  background: var(--bg-surface);
+  white-space: nowrap;
+}
+.tag-blue  { border-color: rgba(59,130,246,0.4); color: #93c5fd; background: rgba(59,130,246,0.1); }
+.tag-green { border-color: rgba(52,211,153,0.4); color: #6ee7b7; background: rgba(52,211,153,0.1); }
+.tag-dim   { border-color: var(--border); color: var(--text-3); background: transparent; }
+
+/* ── Divider ─────────────────────────────────────── */
+.divider { border: none; border-top: 1px solid var(--border); }
+
+/* ── Live dot ────────────────────────────────────── */
+.dot-live {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: dotPulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes dotPulse {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0.25; }
+}
+
+/* ── Accent bar (left border accent) ─────────────── */
+.accent-bar {
+  width: 2px; min-width: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  align-self: stretch;
+}
+
+/* ── Progress track ──────────────────────────────── */
+.track {
+  height: 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.track-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 4px;
+  transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Animations ──────────────────────────────────── */
+.scan-in {
+  animation: scanIn 0.35s ease-out both;
+}
+@keyframes scanIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+.fade-up {
+  animation: fadeUp 0.5s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ── Grid background ─────────────────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* ── Cursor blink ────────────────────────────────── */
+.cursor-blink::after {
+  content: '_';
+  color: var(--accent);
+  animation: blink 1s step-end infinite;
+  margin-left: 1px;
+}
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
