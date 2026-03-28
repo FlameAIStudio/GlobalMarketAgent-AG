@@ -14,7 +14,7 @@ export default function CompetitorCard({ competitor, rank }: CompetitorCardProps
       {/* Header */}
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="flex items-start gap-2.5 min-w-0">
-          <span className="mono text-[#64748b] text-sm pt-0.5 flex-shrink-0">#{rank}</span>
+          <span className="mono text-[#cbd5e1] text-sm pt-0.5 flex-shrink-0">#{rank}</span>
           <div className="min-w-0">
             <p className="text-base font-semibold text-[#e8edf3] leading-tight truncate">{competitor.name}</p>
             {competitor.badge && (
@@ -37,14 +37,14 @@ export default function CompetitorCard({ competitor, rank }: CompetitorCardProps
                   ? '#e8edf3'
                   : i === fullStars && half
                   ? '#3b82f6'
-                  : '#1e293b',
+                  : '#334155',
               }}
             />
           ))}
         </div>
-        <span className="mono text-sm text-[#94a3b8] font-semibold">{competitor.rating}</span>
-        <span className="mono text-sm text-[#64748b]">·</span>
-        <span className="mono text-sm text-[#64748b]">{competitor.reviews} reviews</span>
+        <span className="mono text-sm text-[#cbd5e1] font-semibold">{competitor.rating}</span>
+        <span className="mono text-sm text-[#cbd5e1]">·</span>
+        <span className="mono text-sm text-[#cbd5e1]">{competitor.reviews} reviews</span>
       </div>
 
       {/* Features */}

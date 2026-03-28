@@ -28,10 +28,10 @@ function SectionHeader({ num, title, sub, accent, tag }: SectionHeaderProps) {
   return (
     <div className={`border-t-2 ${accent} pt-5 mb-6 flex items-end justify-between gap-4`}>
       <div className="flex items-baseline gap-4">
-        <span className="mono text-5xl font-bold text-[#1e293b] leading-none select-none">{num}</span>
+        <span className="mono text-5xl font-bold text-[#334155] leading-none select-none">{num}</span>
         <div>
           <h2 className="text-xl font-bold text-[#e8edf3] tracking-tight leading-tight">{title}</h2>
-          {sub && <p className="mono text-xs text-[#64748b] mt-1">{sub}</p>}
+          {sub && <p className="mono text-xs text-[#cbd5e1] mt-1">{sub}</p>}
         </div>
       </div>
       {tag && <span className="tag flex-shrink-0">{tag}</span>}
@@ -45,10 +45,10 @@ function Nav({ phase, report, onBack }: {
   onBack: () => void;
 }) {
   return (
-    <header className="border-b border-[#1e293b] bg-[#080c14]/90 backdrop-blur-sm sticky top-0 z-50">
+    <header className="border-b border-[#334155] bg-[#080c14]/90 backdrop-blur-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-8 h-14 flex items-center justify-between">
         <button onClick={onBack} className="flex items-center gap-2.5 group">
-          <svg className="w-4 h-4 text-[#64748b] group-hover:text-[#94a3b8] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-4 h-4 text-[#cbd5e1] group-hover:text-[#cbd5e1] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
           <span className="text-base font-semibold text-[#e8edf3]">Global Market Agent</span>
@@ -60,7 +60,7 @@ function Nav({ phase, report, onBack }: {
               <span className="tag hidden sm:inline-flex">{report.platform} · {report.region}</span>
               <button
                 onClick={onBack}
-                className="tag hover:border-[#334155] hover:text-[#94a3b8] transition-all duration-150 cursor-pointer"
+                className="tag hover:border-[#334155] hover:text-[#cbd5e1] transition-all duration-150 cursor-pointer"
               >
                 New analysis
               </button>
@@ -112,15 +112,15 @@ function ReportContent() {
           <div className="max-w-7xl mx-auto px-6 sm:px-8 py-10 space-y-14">
 
             {/* ── Report hero ──────────────────────── */}
-            <div className="flex items-end justify-between gap-4 pb-8 border-b border-[#1e293b]">
+            <div className="flex items-end justify-between gap-4 pb-8 border-b border-[#334155]">
               <div>
                 <div className="flex items-center gap-2.5 mb-3">
                   <div className="dot-live" />
                   <span className="mono text-[#34d399] text-sm">report.complete</span>
-                  <span className="mono text-[#64748b] text-sm">· generated in ~4s</span>
+                  <span className="mono text-[#cbd5e1] text-sm">· generated in ~4s</span>
                 </div>
                 <h1 className="text-4xl font-bold text-[#e8edf3] tracking-tight capitalize">{report.keyword}</h1>
-                <p className="mono text-[#64748b] text-sm mt-2">
+                <p className="mono text-[#cbd5e1] text-sm mt-2">
                   {report.platform} · {report.region} · market intelligence report
                 </p>
               </div>
@@ -148,7 +148,7 @@ function ReportContent() {
               />
               <div className="panel p-6 flex gap-5 bg-[#0d1321]">
                 <div className="accent-bar" />
-                <p className="text-base text-[#94a3b8] leading-relaxed">{report.summary}</p>
+                <p className="text-base text-[#cbd5e1] leading-relaxed">{report.summary}</p>
               </div>
             </section>
 
@@ -197,7 +197,7 @@ function ReportContent() {
                   return (
                     <div key={i} className={`panel p-5 pl-6 ${meta.cls}`}>
                       <div className="label mb-3">{meta.label}</div>
-                      <p className="text-base text-[#94a3b8] leading-relaxed">{ins.content}</p>
+                      <p className="text-base text-[#cbd5e1] leading-relaxed">{ins.content}</p>
                     </div>
                   );
                 })}
@@ -217,10 +217,10 @@ function ReportContent() {
             </section>
 
             {/* ── Footer CTA ───────────────────────── */}
-            <div className="border-t border-[#1e293b] pt-7 flex items-center justify-between gap-4">
+            <div className="border-t border-[#334155] pt-7 flex items-center justify-between gap-4">
               <div>
                 <p className="text-base font-semibold text-[#e8edf3]">Run another analysis</p>
-                <p className="mono text-sm text-[#64748b] mt-1">
+                <p className="mono text-sm text-[#cbd5e1] mt-1">
                   Try: pet grooming brush · SEA · TikTok
                 </p>
               </div>
@@ -243,7 +243,7 @@ export default function ReportPage() {
   return (
     <Suspense fallback={
       <div className="min-h-screen grid-bg flex items-center justify-center">
-        <span className="mono text-[#64748b] text-sm">initializing...</span>
+        <span className="mono text-[#cbd5e1] text-sm">initializing...</span>
       </div>
     }>
       <ReportContent />

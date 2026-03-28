@@ -23,7 +23,7 @@ export default function GTMPanel({ gtm }: GTMPanelProps) {
             <div className="label mb-2.5">
               {String(i + 1).padStart(2, '0')} · {section.label}
             </div>
-            <p className="text-sm text-[#94a3b8] leading-relaxed">{gtm[section.key]}</p>
+            <p className="text-sm text-[#cbd5e1] leading-relaxed">{gtm[section.key]}</p>
           </div>
         </div>
       ))}

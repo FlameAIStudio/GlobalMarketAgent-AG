@@ -27,7 +27,7 @@ export default function InputForm() {
         <div className={`panel flex items-center px-4 py-3.5 gap-3 transition-colors duration-150 ${
           focused ? 'border-[#3b82f6]/60' : ''
         }`}>
-          <svg className="w-4 h-4 text-[#64748b] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-4 h-4 text-[#cbd5e1] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
           <input
@@ -38,12 +38,12 @@ export default function InputForm() {
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
             placeholder="e.g. wireless earbuds"
-            className="flex-1 bg-transparent text-[#e8edf3] placeholder-[#64748b] text-base outline-none"
+            className="flex-1 bg-transparent text-[#e8edf3] placeholder-[#cbd5e1] text-base outline-none"
             autoComplete="off"
           />
         </div>
         <div className="flex flex-wrap gap-2 mt-2.5">
-          <span className="mono text-[#64748b] text-xs self-center">try:</span>
+          <span className="mono text-[#cbd5e1] text-xs self-center">try:</span>
           {[
             'wireless earbuds', 'smart watch', 'robot vacuum', 
             'air fryer', 'standing desk', 'massage gun', 
@@ -53,7 +53,7 @@ export default function InputForm() {
               key={ex}
               type="button"
               onClick={() => setKeyword(ex)}
-              className="tag tag-dim hover:border-[#334155] hover:text-[#94a3b8] transition-all duration-150 cursor-pointer"
+              className="tag tag-dim hover:border-[#334155] hover:text-[#cbd5e1] transition-all duration-150 cursor-pointer"
             >
               {ex}
             </button>
@@ -80,7 +80,7 @@ export default function InputForm() {
                   <option key={o} value={o} className="bg-[#0d1117]">{o}</option>
                 ))}
               </select>
-              <svg className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748b] pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#cbd5e1] pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </div>
