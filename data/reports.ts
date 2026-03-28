@@ -238,3 +238,89 @@ export const yogamat_report: ReportData = {
       '① Amazon SEO for "natural rubber yoga mat lightweight" — high commercial intent, lower competition than head terms. ② Instagram/Pinterest lifestyle content targeting yoga studio communities. ③ YouTube yoga teacher sponsored integrations (teachers wield strong purchase influence). ④ Listing A/B test: sustainability story vs. performance specs — let data pick the lead hook.',
   },
 };
+
+export const smartwatch_report: ReportData = {
+  keyword: 'smart watch',
+  region: 'US',
+  platform: 'Amazon',
+  summary: 'The US smart watch market on Amazon is intensely polarized, generating over $6.5B annually. Apple and Samsung command the premium tier ($250+), while a vast array of OEM brands dominates the sub-$50 budget tier. Growth has slowed to 6% YoY, indicating a mature market where replacement cycles drive volume. The most significant whitespace lies in the $80–$150 mid-tier, specifically catering to rugged/outdoor use cases or specialized health monitoring without the premium ecosystem tax.',
+  competitors: [
+    { name: 'Apple Watch Series 9', price: '$399.00', rating: 4.8, reviews: '15,420', features: ['ECG app', 'Crash Detection', 'OLED', 'S9 SiP'], badge: 'Market Leader' },
+    { name: 'Samsung Galaxy Watch 6', price: '$299.99', rating: 4.6, reviews: '8,905', features: ['Sleep coaching', 'BIA sensor', 'Sapphire glass'], badge: 'Android Top Pick' },
+    { name: 'Amazfit T-Rex 2', price: '$189.99', rating: 4.5, reviews: '6,210', features: ['Military standard toughness', '24-day battery', 'Dual-band GPS'] },
+    { name: 'Toobur Smart Watch', price: '$29.99', rating: 4.2, reviews: '24,118', features: ['Alexa built-in', '100+ sports modes', '14-day battery'] },
+  ],
+  price_analysis: {
+    budget: 'Under $50 — Extremely high volume, low brand loyalty. Driven by coupons and basic notification needs.',
+    mid: '$80–$180 — The "Prosumer Alternative" tier. Entry-level models thrive here on battery life claims.',
+    premium: '$250+ — Dominated by iOS/Android ecosystem lock-in. Very high barrier to entry.',
+    insight: 'Do not compete on general features. The mid-tier ($100) is viable only if addressing a specific niche (e.g., extreme sports, senior health monitoring) that Apple/Samsung fail to deliver.'
+  },
+  customer_insights: [
+    { type: 'values', label: 'What Users Care About', content: 'In the mid-to-high tiers, battery life (measured in days, not hours) and GPS accuracy are paramount. In the budget tier, users mostly care about screen brightness, custom watch faces, and basic phone notification syncing.' },
+    { type: 'complaints', label: 'Top Complaints', content: 'Budget watches frequently suffer from unreliable companion apps, disconnecting Bluetooth, and grossly inaccurate blood pressure/heart rate sensors which lead to high return rates and 1-star reviews.' },
+    { type: 'gap', label: 'Market Gap', content: 'A rugged, utilitarian smart watch with a truly reliable companion app under $120. Most cheap rugged watches have terrible software, while premium fitness brands are too expensive for casual hikers.' }
+  ],
+  gtm: {
+    positioning: 'The "unplugged" outdoor tracker. A rugged smartwatch that guarantees 15 days of battery with military-grade durability, built for people tired of charging their watch daily.',
+    messaging: '"Leave your charger at home." Focus heavily on the multi-week battery and drop-test durability. Use direct comparisons against the battery limitations of premium watches.',
+    channel_strategy: '① Partner with outdoor and camping influencers on YouTube for ruggedness stress-tests. ② Aggressive Amazon PPC on "premium alternative" and "rugged smartwatch" keywords. ③ Retargeting ads showing the watch surviving mud and water.'
+  }
+};
+
+export const robot_vacuum_report: ReportData = {
+  keyword: 'robot vacuum',
+  region: 'US',
+  platform: 'Amazon',
+  summary: 'The robotic vacuum category is undergoing rapid premiumization. While the total market grows at 9% YoY, the $800+ "all-in-one" base station segment (self-emptying, self-washing mops) is surging at 45% YoY. New entrants are capturing premium market share away from legacy leaders. Budget LiDAR models ($200-$300) are commoditized. The critical battleground is AI obstacle avoidance and zero-maintenance base stations.',
+  competitors: [
+    { name: 'Roborock S8 Pro Ultra', price: '$1,599.99', rating: 4.6, reviews: '3,240', features: ['Auto-wash mop', 'Hot air drying', 'Dual roller brush'], badge: 'Premium Innovator' },
+    { name: 'iRobot Roomba j7+', price: '$799.00', rating: 4.4, reviews: '12,890', features: ['Self-emptying', 'Pet poop avoidance', 'Dirt Detect'], badge: 'Household Name' },
+    { name: 'eufy BoostIQ RoboVac 11S', price: '$139.99', rating: 4.5, reviews: '64,120', features: ['Super thin', 'Strong suction', 'Bump-and-go navigation'] },
+    { name: 'Shark AV2501AE', price: '$349.99', rating: 4.3, reviews: '18,330', features: ['Bagless self-empty', 'LiDAR mapping', 'Pet hair focus'] },
+  ],
+  price_analysis: {
+    budget: 'Under $150 — Dumb navigation (bump). Declining segment as LiDAR becomes cheaper.',
+    mid: '$300–$500 — "Good enough" LiDAR and basic self-emptying dustbins.',
+    premium: '$800+ — The growth engine. Fully autonomous self-cleaning base stations.',
+    insight: 'Entering the hardware market is extremely capital intensive. The best margin opportunity for new entrants is not the vacuum itself, but high-margin proprietary consumables (cleaning solutions, bags) or niche variants.'
+  },
+  customer_insights: [
+    { type: 'values', label: 'What Users Care About', content: 'Hands-free maintenance. Consumers no longer just want autonomous cleaning; they want autonomous maintenance (not having to clean the mop pads or empty the dustbin for 30+ days). App mapping speed is also highly praised.' },
+    { type: 'complaints', label: 'Top Complaints', content: 'Robot getting stuck on cords/socks (failed obstacle avoidance), smelly mop pads if not dried properly, and the high ongoing cost of proprietary dust bags.' },
+    { type: 'gap', label: 'Market Gap', content: 'A truly smell-free, pet-hair-immune system in the mid-tier ($400-$600) that utilizes bagless self-emptying but with advanced AI obstacle avoidance matching the premium tier.' }
+  ],
+  gtm: {
+    positioning: 'The "Zero-Tangle, Zero-Subscription" smart cleaner. Positioned specifically aimed at pet owners who are frustrated by hair tangles and tired of buying expensive replacement dust bags continuously.',
+    messaging: '"Cleans your floors, and cleans itself. No bags required." Emphasize the long-term cost savings of a bagless base station and the frustration-free anti-tangle brush design.',
+    channel_strategy: '① TikTok UGC focusing specifically on the gross "stress test" (cleaning huge amounts of pet hair). ② Highlight the "TCO" (Total Cost of Ownership) in Amazon A+ content. ③ Affiliate marketing with pet-centric blogs and creators.'
+  }
+};
+
+export const generic_fallback_report: ReportData = {
+  keyword: 'market analysis',
+  region: 'Global',
+  platform: 'Web',
+  summary: 'Based on initial NLP market scans, this category shows high fragmentation. The current structural dynamics suggest a market transitioning from early commoditization to feature-specific stratification. Incumbents control the high-volume generic keywords, forcing new entrants to rely on long-tail niche targeting. (Note: This is a robust framework generated by the AI agent as the specific keyword requires deeper real-time scraping).',
+  competitors: [
+    { name: 'Incumbent Brand Alpha', price: '$99.00', rating: 4.5, reviews: '10,000+', features: ['High Brand Equity', 'Broad Distribution', 'Legacy Tech'], badge: 'Market Leader' },
+    { name: 'Aggressive Challenger', price: '$69.00', rating: 4.3, reviews: '5,000+', features: ['Price Disruption', 'Heavy Ads', 'Feature Parity'] },
+    { name: 'Niche Premium Innovator', price: '$149.00', rating: 4.8, reviews: '1,000+', features: ['Design Focused', 'Community Led', 'High Margin'] }
+  ],
+  price_analysis: {
+    budget: 'Lower 30% — High volume, thin margins. Dominated by white-label manufacturers and low brand loyalty.',
+    mid: 'Middle 50% — High competition zone. Requires strong differentiation or ad spend to survive.',
+    premium: 'Top 20% — Value derived from brand equity and specialized design rather than sheer specs.',
+    insight: 'Avoid the mid-tier "dead zone" unless you have a 10x distribution advantage. Either disrupt the bottom with supply-chain efficiency or attack the top with brand.'
+  },
+  customer_insights: [
+    { type: 'values', label: 'Core Purchase Drivers', content: 'Reliability, clear warranty terms, and strong social proof (UGC video reviews). Modern consumers heavily discount text-only reviews without photos.' },
+    { type: 'complaints', label: 'Common Friction Points', content: 'Customer service unresponsiveness, product lifespan shorter than advertized, and confusing initial setup processes.' },
+    { type: 'gap', label: 'Avenue for Disruption', content: 'Excellent post-purchase experience. Most brands in this generic tier abandon the user after the sale. An obsessive focus on customer success yields outsized loyalty.' }
+  ],
+  gtm: {
+    positioning: 'The "Customer-Obsessed" alternative. Focus on the community and reliability rather than fighting a feature-by-feature spec war.',
+    messaging: '"Built to last, supported forever." Provide transparent expectations and over-deliver on unboxing and setup experience. Emphasize human-based support.',
+    channel_strategy: '① Capture high-intent search traffic via targeted Google/Amazon PPC. ② Build an email capture funnel for post-purchase upsells or referrals. ③ Leverage micro-influencers for authentic "first impressions" unboxing videos.'
+  }
+};
