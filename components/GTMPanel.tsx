@@ -16,14 +16,14 @@ export default function GTMPanel({ gtm }: GTMPanelProps) {
       {SECTIONS.map((section, i) => (
         <div
           key={section.key}
-          className="panel p-5 flex gap-4 hover:border-[#2d3f55] transition-all duration-150"
+          className="panel p-5 flex gap-4 hover:border-[#334155] transition-all duration-150"
         >
           <div className="accent-bar" />
           <div className="flex-1 min-w-0">
             <div className="label mb-2.5">
               {String(i + 1).padStart(2, '0')} · {section.label}
             </div>
-            <p className="text-sm text-[#8499b0] leading-relaxed">{gtm[section.key]}</p>
+            <p className="text-sm text-[#94a3b8] leading-relaxed">{gtm[section.key]}</p>
           </div>
         </div>
       ))}

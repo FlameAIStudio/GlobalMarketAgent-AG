@@ -10,11 +10,11 @@ export default function CompetitorCard({ competitor, rank }: CompetitorCardProps
   const half = competitor.rating - fullStars >= 0.5;
 
   return (
-    <div className="panel p-5 hover:border-[#2d3f55] transition-all duration-150">
+    <div className="panel p-5 hover:border-[#334155] transition-all duration-150">
       {/* Header */}
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="flex items-start gap-2.5 min-w-0">
-          <span className="mono text-[#3a4e63] text-sm pt-0.5 flex-shrink-0">#{rank}</span>
+          <span className="mono text-[#64748b] text-sm pt-0.5 flex-shrink-0">#{rank}</span>
           <div className="min-w-0">
             <p className="text-base font-semibold text-[#e8edf3] leading-tight truncate">{competitor.name}</p>
             {competitor.badge && (
@@ -37,14 +37,14 @@ export default function CompetitorCard({ competitor, rank }: CompetitorCardProps
                   ? '#e8edf3'
                   : i === fullStars && half
                   ? '#3b82f6'
-                  : '#1a2435',
+                  : '#1e293b',
               }}
             />
           ))}
         </div>
-        <span className="mono text-sm text-[#8499b0] font-semibold">{competitor.rating}</span>
-        <span className="mono text-sm text-[#3a4e63]">·</span>
-        <span className="mono text-sm text-[#3a4e63]">{competitor.reviews} reviews</span>
+        <span className="mono text-sm text-[#94a3b8] font-semibold">{competitor.rating}</span>
+        <span className="mono text-sm text-[#64748b]">·</span>
+        <span className="mono text-sm text-[#64748b]">{competitor.reviews} reviews</span>
       </div>
 
       {/* Features */}

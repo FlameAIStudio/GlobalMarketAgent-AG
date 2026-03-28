@@ -25,7 +25,7 @@ export default function PriceChart({ data }: PriceChartProps) {
           return (
             <div key={tier.key}>
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-semibold text-[#8499b0]">{tier.label}</span>
+                <span className="text-sm font-semibold text-[#94a3b8]">{tier.label}</span>
                 <span className="mono text-sm font-bold text-[#e8edf3]">{range}</span>
               </div>
               <div className="track mb-2">
@@ -34,16 +34,16 @@ export default function PriceChart({ data }: PriceChartProps) {
                   style={{ width: `${tier.pct}%` }}
                 />
               </div>
-              {detail && <p className="text-xs text-[#3a4e63] leading-snug">{detail}</p>}
+              {detail && <p className="text-xs text-[#64748b] leading-snug">{detail}</p>}
             </div>
           );
         })}
       </div>
 
       {/* Insight */}
-      <div className="mt-6 pt-5 border-t border-[#1a2435]">
+      <div className="mt-6 pt-5 border-t border-[#1e293b]">
         <div className="label mb-2">analyst note</div>
-        <p className="text-sm text-[#8499b0] leading-relaxed">{data.insight}</p>
+        <p className="text-sm text-[#94a3b8] leading-relaxed">{data.insight}</p>
       </div>
     </div>
   );

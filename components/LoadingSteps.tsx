@@ -62,7 +62,7 @@ export default function LoadingSteps({ onComplete }: LoadingStepsProps) {
       <div className="flex items-center gap-2 mb-6">
         <div className="dot-live" />
         <span className="mono text-[#7a8fa6] text-xs">agent.running</span>
-        <span className="mono text-[#3a4e63] text-xs ml-auto">{pct}% complete</span>
+        <span className="mono text-[#64748b] text-xs ml-auto">{pct}% complete</span>
       </div>
 
       {/* Master progress */}
@@ -92,23 +92,23 @@ export default function LoadingSteps({ onComplete }: LoadingStepsProps) {
                 ) : active ? (
                   <div className="w-2 h-2 rounded-full bg-[#3b82f6] animate-pulse" />
                 ) : (
-                  <div className="w-2 h-2 rounded-full border border-[#3a4e63]" />
+                  <div className="w-2 h-2 rounded-full border border-[#64748b]" />
                 )}
               </div>
 
               <span className={`mono text-xs font-medium w-20 flex-shrink-0 ${
-                done ? 'text-[#34d399]' : active ? 'text-[#3b82f6]' : 'text-[#3a4e63]'
+                done ? 'text-[#34d399]' : active ? 'text-[#3b82f6]' : 'text-[#64748b]'
               }`}>
                 {step.label}
               </span>
 
               <span className={`text-xs flex-1 truncate ${
-                done ? 'text-[#3a4e63]' : active ? 'text-[#7a8fa6] cursor-blink' : 'text-[#3a4e63]'
+                done ? 'text-[#64748b]' : active ? 'text-[#7a8fa6] cursor-blink' : 'text-[#64748b]'
               }`}>
                 {done ? 'complete' : step.desc}
               </span>
 
-              <span className={`mono text-xs flex-shrink-0 ${done ? 'text-[#34d399]/60' : active ? 'text-[#3b82f6]/60' : 'text-[#3a4e63]'}`}>
+              <span className={`mono text-xs flex-shrink-0 ${done ? 'text-[#34d399]/60' : active ? 'text-[#3b82f6]/60' : 'text-[#64748b]'}`}>
                 {done ? 'ok' : active ? 'run' : '—'}
               </span>
             </div>
@@ -118,19 +118,19 @@ export default function LoadingSteps({ onComplete }: LoadingStepsProps) {
 
       {/* Terminal log */}
       <div className="panel-sm">
-        <div className="flex items-center gap-2 px-4 py-2 border-b border-[#1a2435]">
+        <div className="flex items-center gap-2 px-4 py-2 border-b border-[#1e293b]">
           <div className="flex gap-1.5">
-            <div className="w-2.5 h-2.5 rounded-full bg-[#1a2435]" />
-            <div className="w-2.5 h-2.5 rounded-full bg-[#1a2435]" />
-            <div className="w-2.5 h-2.5 rounded-full bg-[#1a2435]" />
+            <div className="w-2.5 h-2.5 rounded-full bg-[#1e293b]" />
+            <div className="w-2.5 h-2.5 rounded-full bg-[#1e293b]" />
+            <div className="w-2.5 h-2.5 rounded-full bg-[#1e293b]" />
           </div>
-          <span className="mono text-[#3a4e63] text-xs ml-1">execution.log</span>
+          <span className="mono text-[#64748b] text-xs ml-1">execution.log</span>
         </div>
         <div className="p-3 space-y-1 max-h-36 overflow-y-auto">
           {log.map((line, i) => (
             <div key={i} className="flex gap-3 scan-in">
-              <span className="mono text-[#3a4e63] text-xs flex-shrink-0">{line.time}</span>
-              <span className={`mono text-xs ${line.ok ? 'text-[#34d399]/70' : 'text-[#3a4e63]'}`}>
+              <span className="mono text-[#64748b] text-xs flex-shrink-0">{line.time}</span>
+              <span className={`mono text-xs ${line.ok ? 'text-[#34d399]/70' : 'text-[#64748b]'}`}>
                 {line.text}
               </span>
             </div>
