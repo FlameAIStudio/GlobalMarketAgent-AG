@@ -5,6 +5,11 @@ import {
   yogamat_report, 
   smartwatch_report, 
   robot_vacuum_report, 
+  air_fryer_report,
+  standing_desk_report,
+  massage_gun_report,
+  power_station_report,
+  water_bottle_report,
   generic_fallback_report 
 } from '@/data/reports';
 
@@ -25,6 +30,21 @@ export function matchReport(keyword: string, region: string, platform: string): 
   }
   if (kw.includes('vacuum') || kw.includes('robot') || kw.includes('cleaner') || kw.includes('sweep') || kw.includes('mop')) {
     return { ...robot_vacuum_report, keyword, region, platform };
+  }
+  if (kw.includes('fryer') || kw.includes('oven')) {
+    return { ...air_fryer_report, keyword, region, platform };
+  }
+  if (kw.includes('desk') || kw.includes('table') || kw.includes('stand')) {
+    return { ...standing_desk_report, keyword, region, platform };
+  }
+  if (kw.includes('massage') || kw.includes('gun') || kw.includes('fascia')) {
+    return { ...massage_gun_report, keyword, region, platform };
+  }
+  if (kw.includes('power') || kw.includes('station') || kw.includes('generator') || kw.includes('battery')) {
+    return { ...power_station_report, keyword, region, platform };
+  }
+  if (kw.includes('bottle') || kw.includes('tumbler') || kw.includes('cup') || kw.includes('flask')) {
+    return { ...water_bottle_report, keyword, region, platform };
   }
 
   // Fallback: 真实的通用分析模型兜底，防止出现挂羊头卖狗肉的尴尬情况

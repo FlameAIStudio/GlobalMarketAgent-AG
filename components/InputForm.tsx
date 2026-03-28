@@ -44,7 +44,7 @@ export default function InputForm() {
         </div>
         <div className="flex flex-wrap gap-2 mt-2.5">
           <span className="mono text-[#64748b] text-xs self-center">try:</span>
-          {['wireless earbuds', 'pet grooming brush', 'yoga mat'].map((ex) => (
+          {['wireless earbuds', 'air fryer', 'standing desk', 'robot vacuum', 'water bottle'].map((ex) => (
             <button
               key={ex}
               type="button"

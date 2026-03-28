@@ -324,3 +324,149 @@ export const generic_fallback_report: ReportData = {
     channel_strategy: '① Capture high-intent search traffic via targeted Google/Amazon PPC. ② Build an email capture funnel for post-purchase upsells or referrals. ③ Leverage micro-influencers for authentic "first impressions" unboxing videos.'
   }
 };
+
+
+export const air_fryer_report: ReportData = {
+  keyword: 'air fryer',
+  region: 'US',
+  platform: 'Amazon',
+  summary: 'The Air Fryer market is a mature $1.2B segment on Amazon US. The current trend has shifted from basic basket air fryers to dual-zone and multifunction smart ovens. Ninja dominates the premium space ($150+), while Cosori handles the mid-tier. The growth vector is in aesthetic, low-profile designs that save counter space, rather than just capacity.',
+  competitors: [
+    { name: 'Ninja Foodi DualZone', price: '$179.99', rating: 4.8, reviews: '34,210', features: ['Dual basket', 'Smart finish', '8 Qt'], badge: 'Market Leader' },
+    { name: 'Cosori Pro II', price: '$99.99', rating: 4.7, reviews: '112,400', features: ['5.8 Qt', '12 presets', 'App control'], badge: 'Best Seller' },
+    { name: 'Instant Vortex Plus', price: '$129.95', rating: 4.6, reviews: '45,890', features: ['ClearCook window', 'Odor erase', '6 Qt'] },
+    { name: 'Chefman TurboFry', price: '$69.99', rating: 4.5, reviews: '22,104', features: ['Analog dial', 'Compact', 'Space-saving'] }
+  ],
+  price_analysis: {
+    budget: 'Under $70 — Analog dials, small capacity (2-4 Qt). Highly commoditized.',
+    mid: '$80–$130 — The sweet spot. Must have digital controls, ~6 Qt capacity, and easy-clean baskets.',
+    premium: '$150+ — Dual-zone, smart probes, or multi-function oven hybrids. High brand loyalty.',
+    insight: 'Do not launch another standard 5 Qt black plastic air fryer. The market wants aesthetic integration (retro colors, glass windows) or dual-zone utility at a mid-tier price.'
+  },
+  customer_insights: [
+    { type: 'values', label: 'What Users Care About', content: 'Dishwasher safe baskets, footprint-to-capacity ratio, and transparent windows to see food cooking without opening the basket. Aesthetic appeal is increasingly driving purchases.' },
+    { type: 'complaints', label: 'Top Complaints', content: 'Teflon coating peeling off after 3 months, burning plastic smell during first uses, and loud fan noise.' },
+    { type: 'gap', label: 'Market Gap', content: 'A visually stunning, glass-basket design that guarantees zero Teflon/PFAS, targeting health-conscious millennials who leave appliances on the counter.' }
+  ],
+  gtm: {
+    positioning: 'The "Toxin-Free, Countertop-Beautiful" Air Fryer. Focused on pure glass/ceramic cooking surfaces with a minimalist aesthetic.',
+    messaging: '"Cook clean. Look clean." Highlight the absolute safety of the materials (No PFAS/Teflon) and the aesthetic design.',
+    channel_strategy: '① Pinterest and TikTok "aesthetic kitchen" influencers. ② Amazon A+ Content emphasizing the material safety certificates. ③ Target search terms like "glass air fryer" and "non toxic air fryer".'
+  }
+};
+
+export const standing_desk_report: ReportData = {
+  keyword: 'standing desk',
+  region: 'US',
+  platform: 'Amazon',
+  summary: 'The standing desk category grew massively during WFH and has flattened, but steady demand remains at $850M annually. The market is split into B2B-grade premium (Fully, Uplift) built-to-order, and low-cost Chinese imports (Fezibo, Flexispot) dominating Amazon volume. Shipping weight logistics and motor reliability are the primary barriers to entry.',
+  competitors: [
+    { name: 'FlexiSpot Pro', price: '$299.99', rating: 4.6, reviews: '18,300', features: ['Dual motor', 'Bamboo top', 'Memory keypad'], badge: 'Volume Leader' },
+    { name: 'FEZIBO L-Shaped', price: '$239.99', rating: 4.4, reviews: '12,450', features: ['Corner desk', 'Splice board', 'LED strip'] },
+    { name: 'Vari Electric Desk', price: '$695.00', rating: 4.8, reviews: '4,100', features: ['Commercial grade', 'Solid top', '5-min assembly'], badge: 'Premium' },
+    { name: 'SHW Memory Preset', price: '$159.99', rating: 4.5, reviews: '25,890', features: ['Single motor', 'Basic keypad', 'Budget pick'] }
+  ],
+  price_analysis: {
+    budget: 'Under $200 — Single motor, multi-piece spliced desktops. High return rate due to wobbling.',
+    mid: '$250–$400 — "Value Premium". Dual motors, 1-piece wood tops, reasonable stability at max height.',
+    premium: '$600+ — Commercial grade. Zero wobble, high weight capacity, 10-year warranties.',
+    insight: 'Logistics eat the margin. Spliced desktops (cut in 2-3 pieces) ship cheaper but get terrible reviews for the seam. A solid 1-piece top shipped via standard UPS dimensions is the holy grail.'
+  },
+  customer_insights: [
+    { type: 'values', label: 'What Users Care About', content: 'Stability at maximum height (no monitor shaking while typing), quiet motor operation, and easy assembly. Cable management solutions are highly requested.' },
+    { type: 'complaints', label: 'Top Complaints', content: 'Tabletop arriving damaged/scratched, desk wobbling violently at standing height, and confusing assembly instructions.' },
+    { type: 'gap', label: 'Market Gap', content: 'A truly wobble-free desk at the $350 price point that includes an integrated, out-of-the-box cable management tray (not as a paid add-on).' }
+  ],
+  gtm: {
+    positioning: 'The "Zero-Wobble, Zero-Clutter" workstation. Over-engineered stability for multi-monitor setups at a direct-to-consumer price.',
+    messaging: '"Stand steady. Work focused." Lead with vibration tests (e.g., water glass test on the desk). Show the built-in cable management hiding all wires.',
+    channel_strategy: '① YouTube setup tech channels (MKBHD style desk tours). ② Amazon PPC targeting "dual monitor standing desk". ③ Partner with remote-work newsletter sponsorships for B2C conversion.'
+  }
+};
+
+export const massage_gun_report: ReportData = {
+  keyword: 'massage gun',
+  region: 'US',
+  platform: 'Amazon',
+  summary: 'Originally established by Theragun ($300+), the massage gun market has been aggressively commoditized. The Amazon volume is entirely driven by $30-$60 models. Differentiation is nearly impossible on hardware alone. Success requires either a medical/physio positioning or capturing the extreme budget "gift" segment.',
+  competitors: [
+    { name: 'Theragun Prime', price: '$299.00', rating: 4.8, reviews: '6,200', features: ['16mm amplitude', 'Smart app', 'Ergonomic grip'], badge: 'Premium Pioneer' },
+    { name: 'Toloco Deep Tissue', price: '$39.99', rating: 4.5, reviews: '48,150', features: ['15 heads', 'LED screen', 'Quiet glide'], badge: 'Volume Leader' },
+    { name: 'Bob and Brad T2', price: '$89.99', rating: 4.7, reviews: '12,300', features: ['Physio designed', 'Type-C charge', 'High torque'] },
+    { name: 'Renpho Active', price: '$59.99', rating: 4.6, reviews: '22,400', features: ['Heat attachment', 'Lightweight', 'Fascia release'] }
+  ],
+  price_analysis: {
+    budget: 'Under $50 — Pure volume play. Often features fake stall-force specs. Heavy reliance on coupon clipping.',
+    mid: '$70–$120 — Trust tier. Brands like Bob & Brad use physio authority to command a premium over generic dropships.',
+    premium: '$200+ — Theragun/Hyperice. Elite athlete endorsement driven.',
+    insight: 'Entering the sub-$50 tier is a race to the bottom. The mid-tier is achievable only with authoritative endorsements (medical professionals, athletic trainers).'
+  },
+  customer_insights: [
+    { type: 'values', label: 'What Users Care About', content: 'Stall force (the gun doesn\'t stop when pressed hard into muscle), weight (arm gets tired holding it), and low noise levels (can use while watching TV).' },
+    { type: 'complaints', label: 'Top Complaints', content: 'Battery dying after 2 months and not holding a charge, random rattling noises developing internally, and guns being too weak for deep tissue.' },
+    { type: 'gap', label: 'Market Gap', content: 'A truly "travel-sized" mini gun that actually retains high stall-force (most minis stall instantly). Targeted at frequent flyers and office workers.' }
+  ],
+  gtm: {
+    positioning: 'The "Pocket Powerhouse". A mini massage gun with the stall-force of a full-sized clinic device.',
+    messaging: '"Deep tissue relief, anywhere." Emphasize the aluminum build, USB-C convenience, and raw power-to-weight ratio.',
+    channel_strategy: '① Airport and travel influencer seeding. ② TikTok UGC showing the device not stalling under heavy pressure. ③ Office-worker targeted Facebook ads for "desk posture relief".'
+  }
+};
+
+export const power_station_report: ReportData = {
+  keyword: 'portable power station',
+  region: 'US',
+  platform: 'Amazon',
+  summary: 'Driven by the camping boom, van-life trend, and increased grid instability, the Portable Power Station market is booming ($1.8B). Legacy players (Jackery) rely on brand recognition, while newer tech insurgents (EcoFlow, Anker) are winning on ultra-fast charging and LiFePO4 battery chemistry.',
+  competitors: [
+    { name: 'Jackery Explorer 1000', price: '$799.00', rating: 4.7, reviews: '8,420', features: ['1002Wh', 'Pure Sine Wave', 'Solar Ready'], badge: 'Legacy Leader' },
+    { name: 'EcoFlow RIVER 2 Pro', price: '$599.00', rating: 4.6, reviews: '4,100', features: ['768Wh LiFePO4', '70min Fast Charge', 'App Control'], badge: 'Tech Innovator' },
+    { name: 'Anker SOLIX C1000', price: '$649.00', rating: 4.8, reviews: '2,300', features: ['1056Wh', 'SurgePad 2400W', '5-Year Warranty'] },
+    { name: 'Bluetti EB3A', price: '$209.00', rating: 4.4, reviews: '9,850', features: ['268Wh', 'UPS function', 'Budget Entry'] }
+  ],
+  price_analysis: {
+    budget: 'Under $300 — Small capacity (200-300Wh) for charging phones/laptops during day trips.',
+    mid: '$500–$900 — Mainstream camping (700-1000Wh). Can run mini-fridges, CPAP machines overnight.',
+    premium: '$1,500+ — Home backup (2000Wh+). High margin, heavy logistics.',
+    insight: 'Do not use standard Lithium-Ion anymore. The market has fully shifted to LiFePO4 (LFP) for an advertised "10-year lifespan".'
+  },
+  customer_insights: [
+    { type: 'values', label: 'What Users Care About', content: 'Lifespan (charge cycles before degrading), charging speed from wall outlets, and ability to run high-wattage appliances (coffee makers/microwaves) without tripping the overload protection.' },
+    { type: 'complaints', label: 'Top Complaints', content: 'Loud inverter fans disrupting sleep (especially for CPAP users), phantom battery drain when turned off, and poor customer service for warranty claims.' },
+    { type: 'gap', label: 'Market Gap', content: 'A whisper-quiet, specifically CPAP-optimized mid-range unit with zero phantom drain, targeting the senior/medical demographic rather than just campers.' }
+  ],
+  gtm: {
+    positioning: 'The "Silent Guardian" power station. Fan-less cooling design ensuring zero noise, built with medical-grade reliability in mind.',
+    messaging: '"Sleep peacefully, power reliably." Shift marketing away from extreme outdoors and towards safety, home backup, and medical device reliability.',
+    channel_strategy: '① Niche SEO for "CPAP battery backup" and "silent power station". ② Facebook ads targeting 55+ demographic emphasizing peace of mind during outages. ③ Partnerships with medical device reviewers.'
+  }
+};
+
+export const water_bottle_report: ReportData = {
+  keyword: 'water bottle',
+  region: 'US',
+  platform: 'Amazon',
+  summary: 'The insulated water bottle market is arguably the most brand-driven category on Amazon. It behaves like a fashion accessory rather than a utility item. Stanley, Yeti, and Hydro Flask control the cultural narrative, while brands like Simple Modern capture the value-conscious demographic matching the exact aesthetics.',
+  competitors: [
+    { name: 'Stanley Quencher H2.0', price: '$45.00', rating: 4.8, reviews: '65,400', features: ['40oz', 'Cupholder compatible', 'Straw included'], badge: 'Viral Phenomenon' },
+    { name: 'Yeti Rambler', price: '$40.00', rating: 4.7, reviews: '82,100', features: ['26oz', 'Chug Cap', 'Dishwasher safe'], badge: 'Durability Standard' },
+    { name: 'Simple Modern Trek', price: '$29.99', rating: 4.8, reviews: '41,200', features: ['40oz', 'Leak-resistant', 'Minimalist logo'], badge: 'Value Alternative' },
+    { name: 'Owala FreeSip', price: '$27.99', rating: 4.7, reviews: '53,800', features: ['24oz', 'Built-in straw + chug', 'Hidden spout'] }
+  ],
+  price_analysis: {
+    budget: 'Under $15 — Generic stainless steel. Impossible to build a brand here.',
+    mid: '$25–$35 — The challenger zone (Simple Modern, Owala). Focused on innovative lids or exact trend-matching at a slight discount.',
+    premium: '$40+ — The status symbol zone (Stanley, Yeti). Driven by limited edition color drops and collabs.',
+    insight: 'Success in this category requires 90% marketing/aesthetic focus and 10% hardware. The actual vacuum insulation tech is completely commoditized.'
+  },
+  customer_insights: [
+    { type: 'values', label: 'What Users Care About', content: 'Fits in a car cup holder, spill-proof/leak-proof ratings (can I throw it in my bag?), and aesthetic color-matching to outfits/lifestyle.' },
+    { type: 'complaints', label: 'Top Complaints', content: 'Leaking when tilted, paint chipping/flaking easily, and difficult-to-clean straw mechanisms causing mold.' },
+    { type: 'gap', label: 'Market Gap', content: 'An ultra-lightweight titanium (or perceived premium material) fashion bottle that perfectly solves the "moldy straw" problem with a fully dismantlable, transparent medical-grade silicone sip system.' }
+  ],
+  gtm: {
+    positioning: 'The "Clean-Sip" fashion tumbler. Re-inventing hydration hygiene while maintaining the 40oz cupholder-friendly form factor.',
+    messaging: '"Stay hydrated. Stay clean." Show macro shots of how easy it is to dismantle and clean the lid. Run fear-based marketing subtly highlighting the mold in competitors\' hidden straws.',
+    channel_strategy: '① TikTok "What\'s in my bag" and "Clean with me" influencer seeding. ② Limited edition color drops every 6 weeks. ③ D2C site first, Amazon as a secondary fulfillment channel to protect brand equity.'
+  }
+};
