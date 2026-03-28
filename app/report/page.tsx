@@ -16,6 +16,29 @@ const INSIGHT_META: Record<CustomerInsight['type'], { label: string; cls: string
   gap:        { label: 'Market gap',        cls: 'border-l-2 border-l-green-500'  },
 };
 
+// ── Section header component ──────────────────────────────────────
+interface SectionHeaderProps {
+  num: string;
+  title: string;
+  sub?: string;
+  accent: string; // tailwind border-top color class
+  tag?: string;
+}
+function SectionHeader({ num, title, sub, accent, tag }: SectionHeaderProps) {
+  return (
+    <div className={`border-t-2 ${accent} pt-5 mb-6 flex items-end justify-between gap-4`}>
+      <div className="flex items-baseline gap-4">
+        <span className="mono text-5xl font-bold text-[#1a2435] leading-none select-none">{num}</span>
+        <div>
+          <h2 className="text-xl font-bold text-[#e8edf3] tracking-tight leading-tight">{title}</h2>
+          {sub && <p className="mono text-xs text-[#3a4e63] mt-1">{sub}</p>}
+        </div>
+      </div>
+      {tag && <span className="tag flex-shrink-0">{tag}</span>}
+    </div>
+  );
+}
+
 function Nav({ phase, report, onBack }: {
   phase: string;
   report: ReportData | null;
@@ -63,7 +86,6 @@ function ReportContent() {
 
   useEffect(() => {
     if (!keyword) { router.push('/'); return; }
-    // Client-side: call matcher directly (no API route needed for static export)
     const result = matchReport(keyword, region, platform);
     setReport(result);
   }, [keyword, region, platform, router]);
@@ -87,10 +109,10 @@ function ReportContent() {
       {/* Report */}
       {phase === 'report' && report && (
         <div className={`flex-1 transition-opacity duration-500 ${visible ? 'opacity-100' : 'opacity-0'}`}>
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 py-10">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 py-10 space-y-14">
 
-            {/* ── Header ─── */}
-            <div className="flex items-end justify-between gap-4 pb-8 mb-8 border-b border-[#1a2435]">
+            {/* ── Report hero ──────────────────────── */}
+            <div className="flex items-end justify-between gap-4 pb-8 border-b border-[#1a2435]">
               <div>
                 <div className="flex items-center gap-2.5 mb-3">
                   <div className="dot-live" />
@@ -116,67 +138,85 @@ function ReportContent() {
               </div>
             </div>
 
-            {/* ── Executive Summary ─── */}
-            <section className="mb-8">
-              <div className="panel p-6 flex gap-5">
+            {/* ── 01 Executive Summary ─────────────── */}
+            <section>
+              <SectionHeader
+                num="01"
+                title="Executive Summary"
+                sub="AI-synthesized market overview"
+                accent="border-t-[#3b82f6]"
+              />
+              <div className="panel p-6 flex gap-5 bg-[#0d1321]">
                 <div className="accent-bar" />
-                <div>
-                  <div className="label mb-3">executive summary</div>
-                  <p className="text-base text-[#8499b0] leading-relaxed">{report.summary}</p>
-                </div>
+                <p className="text-base text-[#8499b0] leading-relaxed">{report.summary}</p>
               </div>
             </section>
 
-            {/* ── Competitors + Price ─── */}
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-5 mb-8">
-              <section className="xl:col-span-2">
-                <div className="flex items-baseline justify-between mb-4">
-                  <h2 className="text-lg font-semibold text-[#e8edf3]">Competitor Mapping</h2>
-                  <span className="label">{report.competitors.length} players analyzed</span>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {report.competitors.map((c, i) => (
-                    <CompetitorCard key={i} competitor={c} rank={i + 1} />
-                  ))}
-                </div>
-              </section>
+            {/* ── 02 Competitor Mapping ────────────── */}
+            <section>
+              <SectionHeader
+                num="02"
+                title="Competitor Mapping"
+                sub={`${report.competitors.length} players analyzed`}
+                accent="border-t-[#6366f1]"
+                tag="amazon · scraped"
+              />
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                {report.competitors.map((c, i) => (
+                  <CompetitorCard key={i} competitor={c} rank={i + 1} />
+                ))}
+              </div>
+            </section>
 
-              <section>
-                <h2 className="text-lg font-semibold text-[#e8edf3] mb-4">Price Analysis</h2>
+            {/* ── 03 Price Analysis ────────────────── */}
+            <section>
+              <SectionHeader
+                num="03"
+                title="Price Analysis"
+                sub="market price distribution by tier"
+                accent="border-t-[#0ea5e9]"
+                tag="3 tiers"
+              />
+              <div className="max-w-2xl">
                 <PriceChart data={report.price_analysis} />
-              </section>
-            </div>
+              </div>
+            </section>
 
-            {/* ── Insights + GTM ─── */}
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 mb-10">
-              <section>
-                <div className="flex items-baseline justify-between mb-4">
-                  <h2 className="text-lg font-semibold text-[#e8edf3]">Customer Insights</h2>
-                  <span className="label">from 100k+ reviews</span>
-                </div>
-                <div className="space-y-3">
-                  {report.customer_insights.map((ins, i) => {
-                    const meta = INSIGHT_META[ins.type] ?? INSIGHT_META.values;
-                    return (
-                      <div key={i} className={`panel p-5 pl-6 ${meta.cls}`}>
-                        <div className="label mb-2.5">{meta.label}</div>
-                        <p className="text-base text-[#8499b0] leading-relaxed">{ins.content}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </section>
+            {/* ── 04 Customer Insights ─────────────── */}
+            <section>
+              <SectionHeader
+                num="04"
+                title="Customer Insights"
+                sub="synthesized from 100k+ reviews"
+                accent="border-t-[#f59e0b]"
+                tag="nlp — sentiment"
+              />
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {report.customer_insights.map((ins, i) => {
+                  const meta = INSIGHT_META[ins.type] ?? INSIGHT_META.values;
+                  return (
+                    <div key={i} className={`panel p-5 pl-6 ${meta.cls}`}>
+                      <div className="label mb-3">{meta.label}</div>
+                      <p className="text-base text-[#8499b0] leading-relaxed">{ins.content}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
 
-              <section>
-                <div className="flex items-baseline justify-between mb-4">
-                  <h2 className="text-lg font-semibold text-[#e8edf3]">GTM Strategy</h2>
-                  <span className="label">ai-generated</span>
-                </div>
-                <GTMPanel gtm={report.gtm} />
-              </section>
-            </div>
+            {/* ── 05 GTM Strategy ──────────────────── */}
+            <section>
+              <SectionHeader
+                num="05"
+                title="GTM Strategy"
+                sub="go-to-market recommendations"
+                accent="border-t-[#34d399]"
+                tag="ai-generated"
+              />
+              <GTMPanel gtm={report.gtm} />
+            </section>
 
-            {/* ── Footer CTA ─── */}
+            {/* ── Footer CTA ───────────────────────── */}
             <div className="border-t border-[#1a2435] pt-7 flex items-center justify-between gap-4">
               <div>
                 <p className="text-base font-semibold text-[#e8edf3]">Run another analysis</p>
@@ -191,6 +231,7 @@ function ReportContent() {
                 New analysis
               </button>
             </div>
+
           </div>
         </div>
       )}
