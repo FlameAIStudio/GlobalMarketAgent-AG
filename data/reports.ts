@@ -119,6 +119,13 @@ export const petbrush_report: ReportData = {
       reviews: '2,100',
       features: ['Basic bristles', 'Colorful packaging'],
     },
+    {
+      name: 'Pawsita Grooming Glove',
+      price: '$6.99',
+      rating: 4.1,
+      reviews: '1,530',
+      features: ['Right hand only', 'Breathable mesh'],
+    },
   ],
   price_analysis: {
     budget: 'Under $8 — Local brands. Low quality, impulse buy driven.',
@@ -249,6 +256,7 @@ export const smartwatch_report: ReportData = {
     { name: 'Samsung Galaxy Watch 6', price: '$299.99', rating: 4.6, reviews: '8,905', features: ['Sleep coaching', 'BIA sensor', 'Sapphire glass'], badge: 'Android Top Pick' },
     { name: 'Amazfit T-Rex 2', price: '$189.99', rating: 4.5, reviews: '6,210', features: ['Military standard toughness', '24-day battery', 'Dual-band GPS'] },
     { name: 'Toobur Smart Watch', price: '$29.99', rating: 4.2, reviews: '24,118', features: ['Alexa built-in', '100+ sports modes', '14-day battery'] },
+    { name: 'Garmin Forerunner 55', price: '$199.99', rating: 4.7, reviews: '12,050', features: ['Built-in GPS', 'PacePro tech', 'Up to 2 weeks battery'] },
   ],
   price_analysis: {
     budget: 'Under $50 — Extremely high volume, low brand loyalty. Driven by coupons and basic notification needs.',
@@ -278,6 +286,7 @@ export const robot_vacuum_report: ReportData = {
     { name: 'iRobot Roomba j7+', price: '$799.00', rating: 4.4, reviews: '12,890', features: ['Self-emptying', 'Pet poop avoidance', 'Dirt Detect'], badge: 'Household Name' },
     { name: 'eufy BoostIQ RoboVac 11S', price: '$139.99', rating: 4.5, reviews: '64,120', features: ['Super thin', 'Strong suction', 'Bump-and-go navigation'] },
     { name: 'Shark AV2501AE', price: '$349.99', rating: 4.3, reviews: '18,330', features: ['Bagless self-empty', 'LiDAR mapping', 'Pet hair focus'] },
+    { name: 'Dreame L10s Ultra', price: '$899.99', rating: 4.5, reviews: '2,150', features: ['Auto-empty & wash', 'AI obstacle avoidance', '5300Pa suction'] },
   ],
   price_analysis: {
     budget: 'Under $150 — Dumb navigation (bump). Declining segment as LiDAR becomes cheaper.',
@@ -305,7 +314,9 @@ export const generic_fallback_report: ReportData = {
   competitors: [
     { name: 'Incumbent Brand Alpha', price: '$99.00', rating: 4.5, reviews: '10,000+', features: ['High Brand Equity', 'Broad Distribution', 'Legacy Tech'], badge: 'Market Leader' },
     { name: 'Aggressive Challenger', price: '$69.00', rating: 4.3, reviews: '5,000+', features: ['Price Disruption', 'Heavy Ads', 'Feature Parity'] },
-    { name: 'Niche Premium Innovator', price: '$149.00', rating: 4.8, reviews: '1,000+', features: ['Design Focused', 'Community Led', 'High Margin'] }
+    { name: 'Niche Premium Innovator', price: '$149.00', rating: 4.8, reviews: '1,000+', features: ['Design Focused', 'Community Led', 'High Margin'] },
+    { name: 'Budget White-Label', price: '$19.99', rating: 3.8, reviews: '25,000+', features: ['Mass Produced', 'Frequent Discounts', 'Generic Specs'] },
+    { name: 'Ecosystem Lock-in Giant', price: '$199.00', rating: 4.6, reviews: '8,500+', features: ['Proprietary Tech', 'High Switching Cost', 'Reliable'] }
   ],
   price_analysis: {
     budget: 'Lower 30% — High volume, thin margins. Dominated by white-label manufacturers and low brand loyalty.',
@@ -335,7 +346,8 @@ export const air_fryer_report: ReportData = {
     { name: 'Ninja Foodi DualZone', price: '$179.99', rating: 4.8, reviews: '34,210', features: ['Dual basket', 'Smart finish', '8 Qt'], badge: 'Market Leader' },
     { name: 'Cosori Pro II', price: '$99.99', rating: 4.7, reviews: '112,400', features: ['5.8 Qt', '12 presets', 'App control'], badge: 'Best Seller' },
     { name: 'Instant Vortex Plus', price: '$129.95', rating: 4.6, reviews: '45,890', features: ['ClearCook window', 'Odor erase', '6 Qt'] },
-    { name: 'Chefman TurboFry', price: '$69.99', rating: 4.5, reviews: '22,104', features: ['Analog dial', 'Compact', 'Space-saving'] }
+    { name: 'Chefman TurboFry', price: '$69.99', rating: 4.5, reviews: '22,104', features: ['Analog dial', 'Compact', 'Space-saving'] },
+    { name: 'Philips Premium XXL', price: '$249.95', rating: 4.6, reviews: '2,890', features: ['Fat removal tech', '7 Qt', 'No preheat needed'] }
   ],
   price_analysis: {
     budget: 'Under $70 — Analog dials, small capacity (2-4 Qt). Highly commoditized.',
@@ -364,7 +376,8 @@ export const standing_desk_report: ReportData = {
     { name: 'FlexiSpot Pro', price: '$299.99', rating: 4.6, reviews: '18,300', features: ['Dual motor', 'Bamboo top', 'Memory keypad'], badge: 'Volume Leader' },
     { name: 'FEZIBO L-Shaped', price: '$239.99', rating: 4.4, reviews: '12,450', features: ['Corner desk', 'Splice board', 'LED strip'] },
     { name: 'Vari Electric Desk', price: '$695.00', rating: 4.8, reviews: '4,100', features: ['Commercial grade', 'Solid top', '5-min assembly'], badge: 'Premium' },
-    { name: 'SHW Memory Preset', price: '$159.99', rating: 4.5, reviews: '25,890', features: ['Single motor', 'Basic keypad', 'Budget pick'] }
+    { name: 'SHW Memory Preset', price: '$159.99', rating: 4.5, reviews: '25,890', features: ['Single motor', 'Basic keypad', 'Budget pick'] },
+    { name: 'UPLIFT V2', price: '$599.00', rating: 4.8, reviews: '6,700', features: ['Dual motor', 'Customizable', '15-year warranty'] }
   ],
   price_analysis: {
     budget: 'Under $200 — Single motor, multi-piece spliced desktops. High return rate due to wobbling.',
@@ -393,7 +406,8 @@ export const massage_gun_report: ReportData = {
     { name: 'Theragun Prime', price: '$299.00', rating: 4.8, reviews: '6,200', features: ['16mm amplitude', 'Smart app', 'Ergonomic grip'], badge: 'Premium Pioneer' },
     { name: 'Toloco Deep Tissue', price: '$39.99', rating: 4.5, reviews: '48,150', features: ['15 heads', 'LED screen', 'Quiet glide'], badge: 'Volume Leader' },
     { name: 'Bob and Brad T2', price: '$89.99', rating: 4.7, reviews: '12,300', features: ['Physio designed', 'Type-C charge', 'High torque'] },
-    { name: 'Renpho Active', price: '$59.99', rating: 4.6, reviews: '22,400', features: ['Heat attachment', 'Lightweight', 'Fascia release'] }
+    { name: 'Renpho Active', price: '$59.99', rating: 4.6, reviews: '22,400', features: ['Heat attachment', 'Lightweight', 'Fascia release'] },
+    { name: 'Hypervolt Go 2', price: '$129.00', rating: 4.7, reviews: '3,450', features: ['TSA approved mini', 'QuietGlide tech', 'Ergonomic'] }
   ],
   price_analysis: {
     budget: 'Under $50 — Pure volume play. Often features fake stall-force specs. Heavy reliance on coupon clipping.',
@@ -422,7 +436,8 @@ export const power_station_report: ReportData = {
     { name: 'Jackery Explorer 1000', price: '$799.00', rating: 4.7, reviews: '8,420', features: ['1002Wh', 'Pure Sine Wave', 'Solar Ready'], badge: 'Legacy Leader' },
     { name: 'EcoFlow RIVER 2 Pro', price: '$599.00', rating: 4.6, reviews: '4,100', features: ['768Wh LiFePO4', '70min Fast Charge', 'App Control'], badge: 'Tech Innovator' },
     { name: 'Anker SOLIX C1000', price: '$649.00', rating: 4.8, reviews: '2,300', features: ['1056Wh', 'SurgePad 2400W', '5-Year Warranty'] },
-    { name: 'Bluetti EB3A', price: '$209.00', rating: 4.4, reviews: '9,850', features: ['268Wh', 'UPS function', 'Budget Entry'] }
+    { name: 'Bluetti EB3A', price: '$209.00', rating: 4.4, reviews: '9,850', features: ['268Wh', 'UPS function', 'Budget Entry'] },
+    { name: 'Goal Zero Yeti 1000', price: '$899.00', rating: 4.5, reviews: '1,200', features: ['983Wh', 'WiFi control', 'Aluminum chassis'] }
   ],
   price_analysis: {
     budget: 'Under $300 — Small capacity (200-300Wh) for charging phones/laptops during day trips.',
@@ -451,7 +466,8 @@ export const water_bottle_report: ReportData = {
     { name: 'Stanley Quencher H2.0', price: '$45.00', rating: 4.8, reviews: '65,400', features: ['40oz', 'Cupholder compatible', 'Straw included'], badge: 'Viral Phenomenon' },
     { name: 'Yeti Rambler', price: '$40.00', rating: 4.7, reviews: '82,100', features: ['26oz', 'Chug Cap', 'Dishwasher safe'], badge: 'Durability Standard' },
     { name: 'Simple Modern Trek', price: '$29.99', rating: 4.8, reviews: '41,200', features: ['40oz', 'Leak-resistant', 'Minimalist logo'], badge: 'Value Alternative' },
-    { name: 'Owala FreeSip', price: '$27.99', rating: 4.7, reviews: '53,800', features: ['24oz', 'Built-in straw + chug', 'Hidden spout'] }
+    { name: 'Owala FreeSip', price: '$27.99', rating: 4.7, reviews: '53,800', features: ['24oz', 'Built-in straw + chug', 'Hidden spout'] },
+    { name: 'Hydro Flask Wide Mouth', price: '$44.95', rating: 4.8, reviews: '32,100', features: ['32oz', 'TempShield', 'Flex Cap'] }
   ],
   price_analysis: {
     budget: 'Under $15 — Generic stainless steel. Impossible to build a brand here.',
